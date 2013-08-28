@@ -1,0 +1,30 @@
+{# This is the show in page. #}
+{% extends "site_base.html" %}
+
+{% block title %}
+	this is the show page
+{% endblock %}
+
+{% block content %}
+	<h2>Welcome, {{ username }}!</h2>
+	<hr />
+	{% if errors %}
+	<ul>
+		{% for error in errors %}
+			<li>{{ error }}</li>
+		{% endfor %}
+	</ul>	
+	{% else %}
+		<h2>Here is the result of filter {{ filter_id }}</h2>
+		<ul>
+		{% for item in items %}
+    		<li><b>{{item.id}} </b><b>{{item.title}} </b> <a href ="{{item.url}}">{{item.url}} </a></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+	<hr />
+	<p>
+		<a href = {% url 'loggedin' %}> Back </a>| 
+		<a href = {% url 'logout' %}> Logout </a>| 
+	</p>
+{% endblock %}

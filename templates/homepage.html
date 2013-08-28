@@ -1,0 +1,15 @@
+{# This is the home page. #}
+{% extends "site_base.html" %}
+
+{% block title %}
+	this is the homepage
+{% endblock %}
+
+{% block content %}
+	<h2>Welcome, {{ username }}!</h2>
+	<hr/>
+
+	<p><a href = {% url 'login' %}> Login </a>| 
+		<a href = {% url 'register' %}> register </a>
+	</p>
+{% endblock %}

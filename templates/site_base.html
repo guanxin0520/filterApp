@@ -1,0 +1,29 @@
+{% comment %}
+This should be used as the base template for all pages on the site.
+
+It should include all html, css, javascript common to all pages, and
+provide blocks for any sections that vary per page.
+{% endcomment %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html lang ="en">
+<head>
+	<title>
+		{% block title %}
+			this is the site base template
+		{% endblock %}
+	</title>
+</head>
+<body>
+	{% block content %}
+		<b>Hello, world</b>
+	{% endblock %}
+
+	<footer {% block footeratt %}{% endblock %}>
+	{% block footer %}
+
+	{% endblock %}
+
+	</footer>
+</body>
+</html>

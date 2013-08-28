@@ -1,0 +1,18 @@
+{# This is the logged in page. #}
+{% extends "site_base.html" %}
+
+{% block title %}
+	this is the loggedin page
+{% endblock %}
+
+{% block content %}
+	<h2>Welcome, {{ username }}!</h2>
+	<hr/>
+	<p><a href = {% url 'train' %}> Train a Classifier </a>| 
+		<a href = {% url 'show' %}> Show recommendations </a>
+	</p>
+	<hr />
+	<p><a href = {% url 'logout' %}> Logout </a>| 
+		<a href = {% url 'home' %}> Home </a>
+	</p>
+{% endblock %}

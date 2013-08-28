@@ -1,0 +1,48 @@
+{# This is the train in page. #}
+{% extends "site_base.html" %}
+
+{% block title %}
+	this is the train page
+{% endblock %}
+
+{% block content %}
+	<h2>Welcome, {{ username }}!</h2>
+	<hr />
+	<form action = "" method = "get">
+		
+		<label for = "keyword">Keyword:</label>
+		<input type = "text" name = "keyword" value = "" id = "keyword">
+		<input type = "submit" value = "Search" />
+	</form>
+	{% if errors %}
+	<ul>
+		{% for error in errors %}
+		<li>{{ error }}</li>
+		{% endfor %}
+	</ul>	
+	{% endif %}
+	{% if keyword %}
+	<h2> result of {{ keyword }}:</h2>
+	{% endif %}
+	{% if times %}
+	<h2> The {{ times }} training round(Total 5 times):</h2>
+	{% endif %}
+	{% if items %}
+	<form action = "" method = "post">
+		{% csrf_token %}
+		{% for item in items %}
+    	<li><b>{{item.id}} </b><b>{{item.title}} </b> <a href ="{{item.url}}">{{item.url}} </a>
+    		<select name = 'choice' id = "{{item.id}}">
+    			<option value = "{{item.id}}:Unknown">Like it?</option>
+    			<option value = "{{item.id}}:Yes">Yes</option>
+    			<option value = "{{item.id}}:No">No</option>
+    		</select></li>
+		{% endfor %}
+		<input type = "submit" value = "Submit" />
+	</form>
+	{% endif %}
+	<hr />
+	<p><a href = {% url 'loggedin' %}> Back </a>| 
+		<a href = {% url 'logout' %}> Logout </a>| 
+	</p>
+{% endblock %}	

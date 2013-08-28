@@ -1,0 +1,35 @@
+{# This is the login page. #}
+{% extends "site_base.html" %}
+
+{% block title %}
+	this is the loginpage
+{% endblock %}
+
+{% block content %}
+	<h1> Log in</h1>
+	<br/>
+	{% if form.errors %}
+		<p class = "error">Sorry, that's not a valid username or password</p>
+	{% endif %}
+	{% if errors %}
+	<ul>
+		{% for error in errors %}
+		<li>{{ error }}</li>
+		{% endfor %}
+	</ul>	
+	{% endif %}
+
+	<form action = "" method = "post">
+		{% csrf_token %}
+		<label for = "username">User name:</label>
+		<input type = "text" name = "username" value = "" id = "username">
+		<label for = "password" >Password:</label>
+		<input type = "password" name = "password" value = "" id = "password">
+
+		<input type = "submit" value = "Login" />
+		<input type = "hidden" name = "next" value = "{{ next|escape }}" />
+	</form>
+	<hr>
+	<p><a href = {% url 'home' %}> Home </a>
+	</p>
+{% endblock %}

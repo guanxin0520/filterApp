@@ -1,0 +1,29 @@
+{# This is the register page. #}
+{% extends "site_base.html" %}
+
+{% block title %}
+	this is the register page
+{% endblock %}
+
+{% block content %}
+	<h1>Create an account</h1>
+	{% if form.errors %}
+		<p class = "error">Sorry, that's not a valid username or password</p>
+	{% endif %}
+	{% if errors %}
+	<ul>
+		{% for error in errors %}
+		<li>{{ error }}</li>
+		{% endfor %}
+	</ul>	
+	
+	{% else %}
+	<form action = "" method = "post">
+		{% csrf_token %}
+		{{form.as_p}}
+
+		<input type = "submit" value = "Create the account" />
+		<input type = "hidden" name = "next" value = "{{ next|escape}}" />
+	</form>
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+# list all python requirements here for installation with pip
+Django>=1.5
+#git+https://github.com/reklaklislaw/bibs.git#egg=bibs
+nltk
+jsonfield
+
+
+
+# should be installed as dependencies of bibs but don't seem to be
