@@ -41,3 +41,11 @@ file, which is the initial data when run syncdb.
 
 See more detail in 'userdefine.py' or leave a message.
 
+Acknowledgement
+-------------------------------
+In this project we use libSVM, nltk API and stop words. Both of them are free and open source library.
+Thanks for their excentlent job.
+
+Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support vector machines. ACM Transactions on Intelligent Systems and Technology, 2:27:1--27:27, 2011. Software available at http://www.csie.ntu.edu.tw/~cjlin/libsvm
+
+Bird, Steven, Edward Loper and Ewan Klein (2009). Natural Language Processing with Python. O’Reilly Media Inc.
