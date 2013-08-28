@@ -13,6 +13,11 @@ and design the UI. (the UI is pretty simple right now). Please have fun with it.
 
 Installation notes for developers
 ---------------------------------
+The demo is tested under Ubuntu. This demo is using libSVM, so before run the server, please run 'make' in terminal under the folder
+
+```bash
+make
+```
 
 Install pip if you don't have it:
 easy_install pip (or sudo easy_install pip)
